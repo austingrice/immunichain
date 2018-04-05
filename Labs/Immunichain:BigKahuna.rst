@@ -81,17 +81,143 @@ Part 2: Getting Your Linux Guest Ready for Composer Playground
 
 The previous part got you ready for Hyperledger Playground from the perspective of creating your LinuxONE Community Cloud Instance. This part will now get you ready from the perspective of your active Linux guest. Don’t worry, this part is extremely short!
 
-**1.** Run this git command wget https://raw.githubusercontent.com/austingrice/immunichain/Linux1BlockchainScript.sh from within your Linux guest::
+**1.** Make a file named Linux1BlockchainScript.sh by enter the command below::
 
-  linux1@blockchain:~> wget https://raw.githubusercontent.com/austingrice/immunichain/Linux1BlockchainScript.sh
+	touch Linux1BlockchainScript.sh
 
-**2.** Make the file executable by entering chmod u+x Linux1BlockchainScript.sh::
+**2** Go into your vi editor by entering the command below::
+
+	vi Linux1BlockchainScript.sh
+	
+**3** Once you are in the file, type the letter i (as in **ice**)to enter insert mode. Paste in the following lines to create your script::
+
+	#!/bin/bash
+
+	# Sanity checks
+	relog=false
+	# Check for docker group
+	if ! $( id -Gn | grep -wq docker ); then
+  	sudo usermod -aG docker linux1
+  	echo "ID linux1 was not a member of the docker group. This has been corrected."
+  	relog=true
+	fi
+	# Check PATH for /data/npm/bin
+	if ! $( echo $PATH | grep -q /data/npm/bin ); then
+  	echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+  	echo "PATH was missing '/data/npm/bin'. This has been corrected."
+  	relog=true
+	fi
+	# Relog needed?
+	if [[ "$relog" = true ]]; then
+  	echo "Some changes have been made that require you to log out and log back in."
+  	echo "Please do this now and then re-run this script."
+  	exit 1
+	fi
+	# Ensure /data exists
+	if [[ ! -d "/data" ]]; then
+  	echo "/data disk is missing. It could take up to 10 minutes to format and mount the /data disk. Issue 'df -h' to 	 verify the /data disk is available before running this script again. When /data is available, please run this script 	      again."
+       	exit 2
+       	fi
+       	# END Sanity checks
+
+       	printf "
+	IBM Master the Mainframe
+	::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	:::::::::::''  ''::'      '::::::  ::::::::::::::'.:::::::::::::::
+	:::::::::' :. :  :         :::: :  :::::::::::.:::':::::::::::::::
+	::::::::::  :   :::.       ::: M :::::::..::::'     :::: : :::::::
+	::::::::    :':  '::'     '' M   M :::::: :'           '' ':::::::
+	:'        : '   :  ::    . M       M   '                        .:
+	:               :  .:: . M           M                         :::
+	:. .,.        :::  ':: M M M       M M M                 .:...::::
+	:::::::.      '      M   M   M   M   M   M               :: :::::.
+	::::::::           M     M     M     M     M   '    '   .:::::::::
+	::::::::.        ::: M   M           M   M :         ''' :::::::::
+	::::::::::      :::::: M M           M M             :::::::::::::
+	: .::::::::.   .:''::::: M           M   ::   :   '::.::::::::::::
+	:::::::::::::::. '  '::::: M       M   :::::.:.:.:.:.:::::::::::::
+	:::::::::::::::: :     ':::: M   M  ' ,:::::::::: : :.:'::::::::::
+	::::::::::::::::: '     :::::: M    . :'::::::::::::::' ':::::::::
+	::::::::::::::::::''   :::::::: : :' : ,:::vem:::::'      ':::::::
+	:::::::::::::::::'   .::::::::::::  ::::::::::::::::       :::::::
+	:::::::::::::::::. .::::::::::::::::::::::::::::::::::::.'::::::::
+	IBM Master the Mainframe
+	"
+
+
+	#Install NodeJS
+	echo -e “*** install_nodejs ***”
+	cd /tmp
+	wget -q https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-s390x.tar.gz
+	cd /usr/local && sudo tar --strip-components=1 -xzf /tmp/node-v8.9.4-linux-s390x.tar.gz
+	echo -e “*** Done withe NodeJS ***\n”
+
+	#Setup and install docker-compose
+	echo -e “*** Installing docker-compose. ***\n”
+	sudo zypper install -y python-pyOpenSSL python-setuptools
+	sudo easy_install pip
+	sudo pip install docker-compose==1.13.0
+	echo -e “*** Done with docker-compose. ***\n”
+
+	#Install Hyperledger Composer Components
+	echo -e “*** Installing Hyperledger Composer command line tools. ***\n”
+	mkdir /data/linux1/ 
+	npm config set prefix '/data/npm'
+	npm config set cache /data/linux1/.npm
+	export PATH=/data/npm/bin:$PATH
+	cd /data/linux1/
+	npm install -g composer-cli@0.19.0
+
+	echo -e “*** Installing Hyperledger Composer rest server. ***\n”
+	npm install -g composer-rest-server@0.19.0
+
+	echo -e “*** Installing Hyperledger Composer playground. ***\n”
+	npm install -g composer-playground@0.19.0
+
+	echo -e "*** Clone and install the Coposer Tools repository.***\n"
+	mkdir ~/fabric-tools && cd ~/fabric-tools
+	curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-		dev-servers.tar.gz
+	tar -xvf fabric-dev-servers.tar.gz
+	export FABRIC_VERSION=hlfv11
+	echo "export FABRIC_VERSION=hlfv11" >> $HOME/.profile
+	./downloadFabric.sh
+	./startFabric.sh
+	./createPeerAdminCard.sh
+	mkdir /data/playground/
+	nohup composer-playground >/data/playground/playground.stdout 2>/data/playground/playground.stderr & disown
+	sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+	sudo iptables -I INPUT 1 -p tcp --dport 3000 -j ACCEPT
+	sudo iptables -I INPUT 1 -p tcp --dport 1880 -j ACCEPT
+	sudo bash -c "iptables-save > /etc/linuxone/iptables.save"
+
+	#Install NodeRed
+	echo -e "*** Installing NodeRed. ***\n"
+	npm install -g node-red
+	nohup node-red >/data/playground/nodered.stdout 2>/data/playground/nodered.stderr & disown
+
+	# Persist PATH setting
+	# Check PATH for /data/npm/bin
+	if ! $( echo $PATH | grep -q /data/npm/bin ); then
+  	echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+  	echo "PATH was missing '/data/npm/bin'. This has been corrected."
+	fi
+
+	# Persist docker group addition
+	sudo usermod -aG docker linux1
+
+	echo "Please log out of this system and log back in to pick up the group and PATH changes."
+	
+**4.** Hit ESC and then type in :wq to write and quit your vi editor tool. Once you have done this, you have created a Blockchain script::
+
+	ESC + :wq
+
+**5.** Make the file executable by entering chmod u+x Linux1BlockchainScript.sh::
 
 	linux1@blockchain:~> chmod u+x Linux1BlockchainScript.sh
 
-**3.** Enter ls -l again to see the file again
+**6.** Enter ls -l again to see the file again
 
-**4.** Return back one directory cd .. and enter df –h if you do not see “/data” in the mounted column, wait a few moments before going onto the next step::
+**7.** Enter df –h and if you do not see “/data” in the mounted column, wait a few moments before going onto the next step::
 
   linux1@blockchain:~> df -h
   Filesystem      Size  Used Avail Use% Mounted on
@@ -104,15 +230,15 @@ The previous part got you ready for Hyperledger Playground from the perspective 
   /dev/dasdb1      45G  5.0G   37G  12% /data
   tmpfs           391M     0  391M   0% /run/user/1001
 
-**5.** Now, run the file by entering ./Linux1BlockchainScript.sh – Be patient, this script will take 7 to 10 minutes to run. If it doesn’t want to run, you might need to exit out of your Linux guest and sign back in::
+**8.** Now, run the file by entering ./Linux1BlockchainScript.sh – Be patient, this script will take 7 to 10 minutes to run. If it doesn’t want to run, you might need to exit out of your Linux guest and sign back in::
 
 	linux1@blockchain:~> ./Linux1BlockchainScript.sh
 
-**6.** The first time you run the script you will need to exit in order for permissions and environment variables to take effect. You can do this by entering exit once you get your command line back
+**9.** The first time you run the script you will need to exit in order for permissions and environment variables to take effect. You can do this by entering exit once you get your command line back
 
-**7.** Now you can log back into your Linux guest
+**10.** Now you can log back into your Linux guest
 
-**8.** Now, verify that you have running Hyperledger Fabric Docker containers network by entering docker ps –a
+**11.** Now, verify that you have running Hyperledger Fabric Docker containers network by entering docker ps –a
 
 .. image:: Images/2.1.png
 
