@@ -5,21 +5,21 @@ Part 1: Setting Up Your LinuxONE Community Cloud Account
 
 **2.** Click on Start your trial now
 
-.. image:: Labs/Images/1.1.png
+.. image:: Images/1.1.png
 
 **3.** Complete the required fields, once filled in click on Request your trial
 
-.. image:: Labs/Images/1.2.png
+.. image:: Images/1.2.png
 
 **4.** You will receive an email containing your User ID and Password. Follow the link to the LinuxONE CC
 
 **5.** You’ll be at the website asking for your User ID and Password. Enter your credentials and click on Sign in
 
-.. image:: Labs/Images/1.3.png
+.. image:: Images/1.3.png
 
 **6.** You’ll now be on the LinuxONE CC Home Page. Click on the Manage Instances under the Infrastructure section
 
-.. image:: Labs/Images/1.4.png
+.. image:: Images/1.4.png
 
 **7.** Click on Create
 
@@ -31,15 +31,15 @@ Part 1: Setting Up Your LinuxONE Community Cloud Account
   Image: SLES12 SP3
   Flavor: LinuxONE-Medium
 
-.. image:: Labs/Images/1.5.png
+.. image:: Images/1.5.png
 
 **9.** Under the SSH Key Pair section, click on Create
 
-.. image:: Labs/Images/1.6.png
+.. image:: Images/1.6.png
 
 **10.** In the pop-up box, enter a name you would like to give your keys. Then click on Create a new key pair
 
-.. image:: Labs/Images/1.7.png
+.. image:: Images/1.7.png
 
 **11.** You will then be prompted to save the file (keys). Click on Save File. If you didn’t get prompted, it might of automatically download to your folders
 
@@ -47,11 +47,11 @@ Part 1: Setting Up Your LinuxONE Community Cloud Account
 
 **13.** Review all the selections you selected and click on Create
 
-.. image:: Labs/Images/1.8.png
+.. image:: Images/1.8.png
 
 **14.** You will see the Instance starting up. Once it says ACTIVE in the status column you are good to go. Note your IP Address. It might be best to write down your IP Address. You can always toggle between your terminal and the LinuxONE CC website. 
 
-.. image:: Labs/Images/1.9.png
+.. image:: Images/1.9.png
 
  **15.** You can just ssh linux1@xxx.xxx.x.xx to connect to your Linux guest. If that doesn’t work jump to the next step. If that does work, jump to step 19
 
@@ -61,7 +61,7 @@ Part 1: Setting Up Your LinuxONE Community Cloud Account
 
   keyname refers to what you named your keys
 
-.. image:: Labs/Images/1.10.png
+.. image:: Images/1.10.png
 
 **18.** From the path where your keys are located enter ssh –i keyname.pem linux1@xxx.xxx.xxx.xxx:: 
 
@@ -69,7 +69,7 @@ Part 1: Setting Up Your LinuxONE Community Cloud Account
 
 **19.** Type yes when you are prompted to continue connecting to your instance
 
-.. image:: Labs/Images/1.11.png
+.. image:: Images/1.11.png
 
 **20.** You are now connected to your LinuxONE CC instance! 
 
@@ -114,7 +114,7 @@ The previous part got you ready for Hyperledger Playground from the perspective 
 
 **8.** Now, verify that you have running Hyperledger Fabric Docker containers network by entering docker ps –a
 
-.. image:: Labs/Images/2.1.png
+.. image:: Images/2.1.png
 
 Congratulations if you just did all of this successfully. You just did the hard part. In next part we will start Immunichain. 
 
@@ -128,11 +128,11 @@ Part 3: Web Immunichain
 
 **2.** You will get a Welcome pop-up box with a graphic and a few words. Click on Let’s Blockchain
 
-.. image:: Labs/Images/3.1.png
+.. image:: Images/3.1.png
 
 **3.** Then you will be in the Composer Playground homepage. Click on Deploy a New Business Network. Make sure it says Web Browser in the top right.
 
-.. image:: Labs/Images/3.2.png
+.. image:: Images/3.2.png
 
 **4.** Select empty-business-network. Then give your business network a name and a description:: 
 
@@ -146,7 +146,7 @@ Afterwards, you can come back to the Composer Playground play with some of the o
 
 **6.** You will then be taken to Your Wallet. Your wallet is basically a quick, seamless connection to multiple connections that you can jump around with. You will see later how easy it is. Click on Connect now in order to get connected to our immunichain network
 
-.. image:: Labs/Images/3.5.png
+.. image:: Images/3.5.png
 
 **7.** Fill in your model file with the below text::
 
@@ -217,7 +217,7 @@ Afterwards, you can come back to the Composer Playground play with some of the o
 
 **8.** Then click on Add a File in the bottom left. Then select Script File (.js) and click on Add. 
 
-.. image:: Labs/Images/3.6.png
+.. image:: Images/3.6.png
 
 **9.** Replace the content of the Script file with the following below::
 
@@ -319,13 +319,13 @@ Afterwards, you can come back to the Composer Playground play with some of the o
 
 **10.** Then click on Deploy Changes in the bottom left. 
 
-.. image:: Labs/Images/3.7.png
+.. image:: Images/3.7.png
 
 In 0.19.0, they changed Update to Deploy Changes. Even in the Bluemix version of Composer, you are deploying this network to Fabric. When you hit the Deploy Changes button, you have to give that chaincode a version, but it has to go in sequential order. For example, 0.0.1 would move to 0.0.2 – thus cannot go from 0.0.1 to 0.0.3. If you were not to rename your chaincode version, the deploy-0 to deploy-1 would also work due to the sequential requirement. 
 
 **11.** After you have done that, your screen should look like this. If it does, then we are in business (get it? In business, business network – great!)
 
-.. image:: Labs/Images/3.8.png
+.. image:: Images/3.8.png
 
 
 Part 4: Creating Assets and Participants
@@ -333,7 +333,7 @@ Part 4: Creating Assets and Participants
 
 **1.** Now that you have an Immunichain Business Network, jump over to the Test section of the Composer Playground. The test area allows you to create assets, participants and submit transactions against your assets and participants. Your screen should look like this: 
 
-.. image:: Labs/Images/4.1.png
+.. image:: Images/4.1.png
 
 Before we create assets and participants, we need to know what each asset and participants represent. 
 	- Guardian is the parent
@@ -342,25 +342,25 @@ Before we create assets and participants, we need to know what each asset and pa
 
 **2.** Now create a Guardian by clicking on +Create New Participant. Give the Guardian a number. I stick to 1, 2, 3 or low numbers that you can remember, but you can create any ID number you want. I suggest writing your ID numbers down as we move along. Once you have filled in the information click on Create
 
-.. image:: Labs/Images/4.2.png
+.. image:: Images/4.2.png
 
-.. image:: Labs/Images/4.3.png
+.. image:: Images/4.3.png
 
 **3.** Once you have created a Guardian, your screen should look like this: 
 
-.. image:: Labs/Images/4.4.png
+.. image:: Images/4.4.png
 
 **4.** Go ahead and make a Medical Provider. Remember the Medical Provider number you create
 
-.. image:: Labs/Images/4.5.png
+.. image:: Images/4.5.png
 
 **5.** Now, let’s make a child. Click on optional properties at the bottom first. Assign him to the guardian you just created a step ago
 
-.. image:: Labs/Images/4.6.png
+.. image:: Images/4.6.png
 
 **6.** Your screen should look like this when you are done:
 
-.. image:: Labs/Images/4.7.png
+.. image:: Images/4.7.png
 
 **7.** Go ahead and create more medical providers, guardians and children. Just to remember to write down the ID numbers. This will make more sense when we submit transactions. 
 
@@ -370,39 +370,39 @@ Part 5: Submitting Transactions
 
 **1.** Now, click on Submit Transaction in the bottom left and let’s authorize a member to view the health record of our child. You can change the type of transaction you want by click on the middle grey box. I have it in a square below
 
-.. image:: Labs/Images/5.1.png
+.. image:: Images/5.1.png
 
 **2.** Now, let’s make an authorized medical provider transaction. Here is my transaction. You can make any type of transaction you want here
 
-.. image:: Labs/Images/5.2.png
+.. image:: Images/5.2.png
 
 My transaction says let medical provider #1 (HealthQuest) have Child #1’s (Emily) healthcare record. This also means that HealthQuest can administer immunization shots to Emily.
 
 **3.** You can view this transaction by clicking on childform on the left and then Show All on Emily. Notice that member 1 is now in Emily’s description
 
-.. image:: Labs/Images/5.3.png
+.. image:: Images/5.3.png
 
 **4.** Click on Submit Transaction and then change the transaction type to addImmunizations. The format to add an immunization is a little different. In the Vaccine section put { "name" : "immunization", "provider" : "medical provider", "imdate" : "date" } inbetween the brackets. Replace the immunization, medical provider and date with whatever you would like. Here is what my transaction looks like::
 
   { "name" : "immunization", "provider" : "medical provider", "imdate" : "date" }
 
-.. image:: Labs/Images/5.4.png
+.. image:: Images/5.4.png
 
 **5.** To view your immunization, go your child in the Childform section
 
-.. image:: Labs/Images/5.5.png
+.. image:: Images/5.5.png
 
 **6.** Once you submit the transaction and it is good, click on All Transactions in the bottom left. This is what Composer likes to call the Historian. Now is a good time to tell you about the Historian. The Historian is the sequence of transactions or addition or removal of participants or assets. I didn’t tell you to look at the Historian when you were creating the Participants and Assets, but the Historian kept track of when and what type of participant or asset you created. You can scroll to the bottom to view the first transaction you created, which should be the Medical Provider - HealthQuest - or whatever you called it. You can see by clicking on view record. 
 
-.. image:: Labs/Images/5.6.png
+.. image:: Images/5.6.png
 
-.. image:: Labs/Images/5.7.png
+.. image:: Images/5.7.png
 
 **7.** Continue to make various transactions that you want
 
 **8.** When you are done, click on Export from the Define section. This will export your business network as an .bna file. You can take this .bna file and deploy that network on other Composer-Playground interfaces. 
 
-.. image:: Labs/Images/5.8.png
+.. image:: Images/5.8.png
 
 
 Part 6: Deploying Your Business Network to Hyperledger Fabric
@@ -416,7 +416,7 @@ Part 6: Deploying Your Business Network to Hyperledger Fabric
 
 **3.** Drop in your immunichain.bna file that you just exported. Drop it in the “Drop Here to Upload or Browse” box
 
-.. image:: Labs/Images/6.1.png
+.. image:: Images/6.1.png
 
 **4.** Then scroll down and select ID and Secret. For Enrollment ID enter admin and for Enrollment Secret enter adminpw. Scroll back up and click on Deploy::
 
@@ -425,11 +425,11 @@ Part 6: Deploying Your Business Network to Hyperledger Fabric
 
 **5.** Then you will be in your Wallet. You will see a second card right next to the PeerAdmin. Click on Connect Now on the new card your just created. Mine says admin, but it might be called something else in your Playground. 
 
-.. image:: Labs/Images/6.2.png
+.. image:: Images/6.2.png
 
 **6.** Now you are connected to a running Fabric. To verify that you actually are, go to your command line and enter docker ps –a and notice a docker container that starts out as dev-peer0 
 
-.. image:: Labs/Images/6.3.png
+.. image:: Images/6.3.png
 
 
 Part 7: Creating Assets and Participants
@@ -439,7 +439,7 @@ This section is very similar to Part 4. You are going to create assets and parti
 
 **1.** Now that you have an Immunichain Business Network connected to the Hyperledger Fabric, jump over to the Test section of the Composer Playground. The test area allows you to create assets, participants and submit transactions against your assets and participants. Your screen should look like this: 
 
-.. image:: Labs/Images/7.1.png
+.. image:: Images/7.1.png
 
 Before we create assets and participants, we need to know what each asset and participants represent. 
 	- Guardian is the parent
@@ -448,25 +448,25 @@ Before we create assets and participants, we need to know what each asset and pa
 
 **2.** Now create a Guardian by clicking on +Create New Participant. Give the Guardian a number. I stick to 1, 2, 3 or low numbers that you can remember, but you can create any ID number you want. I suggest writing your ID numbers down as we move along. Once you have filled in the information click on Create
 
-.. image:: Labs/Images/7.2.png
+.. image:: Images/7.2.png
 
-.. image:: Labs/Images/7.3.png
+.. image:: Images/7.3.png
 
 **3.** Once you have created a Guardian, your screen should look like this: 
 
-.. image:: Labs/Images/7.4.png
+.. image:: Images/7.4.png
 
 **4.** Go ahead and make a Medical Provider. Remember the Medical Provider number you create
 
-.. image:: Labs/Images/7.5.png
+.. image:: Images/7.5.png
 
 **5.** Now, let’s make a child. Click on optional properties at the bottom first. Assign him to the guardian you just created a step ago
 
-.. image:: Labs/Images/7.6.png
+.. image:: Images/7.6.png
 
 **6.** Your screen should look like this when you are done:
 
-.. image:: Labs/Images/7.7.png
+.. image:: Images/7.7.png
 
 **7.** Go ahead and create more medical providers, members, guardians and children. Just to remember to write down the ID numbers. This will make more sense when we submit transactions. 
 
@@ -478,7 +478,7 @@ So far, everything has been a bit easy. Now, we are going to add a participant t
 
 **1.** Head into your model file by going to the Define section and clicking on the Model File
 
-.. image:: Labs/Images/8.1.png
+.. image:: Images/8.1.png
 
 **2.** On line 15, add in this participant::
 
@@ -487,25 +487,25 @@ So far, everything has been a bit easy. Now, we are going to add a participant t
 	o String name
   }
 
-.. image:: Labs/Images/8.2.png
+.. image:: Images/8.2.png
 
 **3.** On line 35, add in this line in the asset childform::
 
   --> Member [] members optional
 
-.. image:: Labs/Images/8.3.png
+.. image:: Images/8.3.png
 
 **4.** On line 47, add in this line in the transaction authMember::
 
   --> Member member
 
-.. image:: Labs/Images/8.4.png
+.. image:: Images/8.4.png
 
 **5.** On line 53, add in this line in the transaction removeMemberAuth::
 
   --> Member member
 
-.. image:: Labs/Images/8.5.png
+.. image:: Images/8.5.png
 
 **Note** What other participants or assets could you see being added the Immunichain Blockchain network? Collaborate with a few people around you to gather ideas. Later you can add these participants and assets to your network. 
 
@@ -513,7 +513,7 @@ Now, let’s add some transactions.
 
 **6.** Switch to the Script File (.js) in the Define Section
 
-.. image:: Labs/Images/8.6.png
+.. image:: Images/8.6.png
 
 **7.** On line 20, add in this transaction::
 
@@ -533,7 +533,7 @@ Now, let’s add some transactions.
   	});
   }
 
-.. image:: Labs/Images/8.7.png
+.. image:: Images/8.7.png
 
 **8.** On line 36, add in this transaction as well::
 
@@ -562,7 +562,7 @@ Now, let’s add some transactions.
 
 Look at the picture below to get a sense of what to do.
 
-.. image:: Labs/Images/8.8.png
+.. image:: Images/8.8.png
 
 **9.** Click on Deploy Changes to update your business network. Due to 0.19.0 in Hyperledger Composer, you will get a pop up asking for an installation card and upgrade card. Choose the PeerAdmin@hlfv1 card and click upgrade. You will see this pop up every time you upgrade your chaincode version.
 
@@ -572,11 +572,11 @@ Part 9: Submitting Transactions
 
 **1.** Now that we have a new participant type, let’s create one. Jump to the test section and click on Member on the left. 
 
-.. image:: Labs/Images/9.1.png
+.. image:: Images/9.1.png
 
 **2.** Click on Create New Participant and follow the steps below to add a Member.
 
-.. image:: Labs/Images/9.2.png
+.. image:: Images/9.2.png
 
 **3.** Now that we have created a Member, let’s make some transactions. Click on Submit Transaction in the bottom left.
 
@@ -584,7 +584,7 @@ Part 9: Submitting Transactions
 
 **5.** Now, replace the ID Numbers to replicate the guardian, medical provider and child. Look at the below picture to get a sense of what to do
 
-.. image:: Labs/Images/9.3.png
+.. image:: Images/9.3.png
 
 That basically says, assign medical provider #1 (Healthquest) to Child #1 (Emily).
 
@@ -592,33 +592,33 @@ That basically says, assign medical provider #1 (Healthquest) to Child #1 (Emily
 
 **7.** Once you submit the transaction and it is good, click on All Transactions in the bottom left. This is what Composer likes to call the Historian. Now is a good time to tell you about the Historian. The Historian is the sequence of transactions or addition or removal of participants or assets. I didn’t tell you to look at the Historian when you were creating the Participants and assets, but the Historian kept track of when and what type of participant or asset you created. You can scroll to the bottom to view the first transaction you created, which should be the Medical Provider, HealthQuest or whatever you called it. You can see by clicking on view record. 
 
-.. image:: Labs/Images/9.4.png
+.. image:: Images/9.4.png
 
 **8.** Back to our transaction, click on the Childform on the left. Find the child you assigned a Medical Provider to. Click on Show All to view the entire asset of your child. Notice the medical provider you assigned it to? 
 
-.. image:: Labs/Images/9.5.png
+.. image:: Images/9.5.png
 
 **9.** Should we do another transaction? Of course! This time we will add a member to our child. To do this, we need to go back to our Child. 
 
 **10.** Then click on the pencil in the top right of our child’s box.
 
-.. image:: Labs/Images/9.6.png
+.. image:: Images/9.6.png
 
 **11.** Click on Optional Properties. You will notice the member section appearing now. Then click on Update.
 
-.. image:: Labs/Images/9.7.png
+.. image:: Images/9.7.png
 
 **12.** Now, click on Submit Transaction and let’s authorize a member to view the health record of our child. You can change the type of transaction you want by clicking on the middle grey box. 
 
 **13.** Now, let’s make an authorized member transaction. Here is my transaction. You can make any type of transaction you want here
 
-.. image:: Labs/Images/9.8.png
+.. image:: Images/9.8.png
 
 My transaction says let member #1 (High School) have Child #1’s (Emily) health record. This would be extremely useful when every year millions of kids get physicals in order to play a sport. Imagine having your medical provider authorize your child’s health record to approve them playing a sport. I know my mom would’ve enjoyed not going up to the High School an additional time. 
 
 **14.** You can view this transaction by clicking on childform on the left and then Show All on Emily. Notice that member 1 is now in Emily’s description
 
-.. image:: Labs/Images/9.9.png
+.. image:: Images/9.9.png
 
 **15.** We have submitted some transactions, but now let’s actually add some immunizations to a child
 
@@ -626,11 +626,11 @@ My transaction says let member #1 (High School) have Child #1’s (Emily) health
 
   { "name" : "immunization", "provider" : "medical provider", "imdate" : "date" }
 
-.. image:: Labs/Images/9.10.png
+.. image:: Images/9.10.png
 
 **17.** To view your immunization, go your child in the Childform section
 
-.. image:: Labs/Images/9.11.png
+.. image:: Images/9.11.png
 
 **18.** Continue to make various transactions that you want
 
@@ -642,31 +642,31 @@ If you were to go to the permissions.acl file in the Define section, you would n
 
 **1.** Go to the Define section of Composer Playground. Then click on admin in the top right. Then click on ID Registry
 
-.. image:: Labs/Images/10.1.png
+.. image:: Images/10.1.png
 
 **2.** We are doing great if this is what your page looks like
 
-.. image:: Labs/Images/10.2.png
+.. image:: Images/10.2.png
 
 **3.** Click on Issue New ID
 
 **4.** A pop-up will appear. Give your identity a name (disclaimer: the identity will be tied to a participant you created earlier in the lab; ie: Guardian Austin, Medical Provider HealthQuest). Then type in the number 1. You should now see the various participants that have an ID number of 1. If you gave your participants a different ID number, you won’t see anything by typing in 1. Instead, type in the number you gave to your participants. Here is what I did below:
 
-.. image:: Labs/Images/10.3.png
+.. image:: Images/10.3.png
 
 **5.** If your screen looks like this, then we are in good shape
 
-.. image:: Labs/Images/10.4.png
+.. image:: Images/10.4.png
 
 **6.** Go ahead and create other identities for your participants
 
 **7.** I have a total of 4 identities in my business network. Here is what my screen looks like. You could have more identities if you created more, depending on how many participants your created in Part 2
 
-.. image:: Labs/Images/10.5.png
+.. image:: Images/10.5.png
 
 **8.** Since we are in the admin identity (make sure you see admin in the top right), lets change our permissions file. Click on Define and then Access Control in the bottom left.
 
-.. image:: Labs/Images/10.6.png
+.. image:: Images/10.6.png
 
 **9.** In the permissions.acl file, copy all that is below::
 
@@ -862,83 +862,83 @@ If you were to go to the permissions.acl file in the Define section, you would n
 
 **10.** Now, paste all that you have copied above the two rules you currently have. Here is what I my screen looks like now:
 
-.. image:: Labs/Images/10.8.png
+.. image:: Images/10.8.png
 
 **11.** Once you are good to go, click on Deploy Changes in the bottom left and that will make changes across the entire business network. Read through some of the rules that we just implemented. What do you think will change as we go through the various identities?
 
-.. image:: Labs/Images/10.9.png
+.. image:: Images/10.9.png
 
 **12.** Click on admin in the top right again. This time, click on My Business Networks. This will take us to the Composer Playground homepage
 
 **13.** Now your screen should look like this:
 
-.. image:: Labs/Images/10.10.png
+.. image:: Images/10.10.png
 
 When you created the identities, Composer was creating ID Cards for those identities. That is why I have 4 ID Cards. They are all tied to the Immunichain business network and to the participants you created earlier. You could think of this as a 4 peer Blockchain network, with 1 of the peers being an admin who oversees the entire network. 
 
 **14.** Go ahead and click on Connect Now with your Guardian ID.
 
-.. image:: Labs/Images/10.11.png
+.. image:: Images/10.11.png
 
 **15.** You are now in the Guardian’s perspective in the Immunichain business network. Go ahead and click on the other participants in the Test section
 
 Medical Providers:
 
-.. image:: Labs/Images/10.12.png
+.. image:: Images/10.12.png
 
 Members: 
 
-.. image:: Labs/Images/10.13.png
+.. image:: Images/10.13.png
 
 Child: 
 
-.. image:: Labs/Images/10.14.png
+.. image:: Images/10.14.png
 
 What did you notice about the permissions here? From the Guardian perspective, you can view all the Medical Providers, Members and Children that the Guardian has ownership of. 
 
 **16.** Go ahead and update your Child by clicking on the pencil in the top right. Delete the Medical Providers and Members
 
-.. image:: Labs/Images/10.15.png
+.. image:: Images/10.15.png
 
-.. image:: Labs/Images/10.16.png
+.. image:: Images/10.16.png
 
 **17.** Submit transaction from the Guardian perspective. Start with assigning a Medical Provider. 
 
-.. image:: Labs/Images/10.17.png
+.. image:: Images/10.17.png
 
 **18.** Submit another transaction by assigning a Member
 
-.. image:: Labs/Images/10.18.png
+.. image:: Images/10.18.png
 
 From the Guardian perspective, you are able to do a lot of different things. First, you can view the Children in the network that the Guardian has ownership of. Also, the guardian can create additional children with the way the permissions are set up. Do you think this is a viable option in a production environment? I would say no, but rather you should have the Medical Provider, who administered the birth of the Child, create the Child asset. In a production environment, this would be negotiated between all the participants in the business network. Also, as the Guardian you can also view all the Members and Medical Providers. Why do you think that is so? When you have a child as a guardian you want to be able to view all the options you have as possible Medical Providers and Members. In a real-world scenario, maybe the Guardian would only view all the Medical Providers that are tied to their Health Insurance, but that would require an Insurer in this Immunichain business network. Maybe in the future :) 
 
 **19.** I think you’re getting the sense from the Guardian perspective. Before we jump to another perspective, delete all Members. You previously did this from step 16 in this part. Once you have successfully done that, go ahead and switch to the Medical Provider perspective. Click on My Business Networks in the top right. Then click on Connect Now on the Medical Provider
 
-.. image:: Labs/Images/10.19.png
+.. image:: Images/10.19.png
 
 **20.** Click around on the other participants in the Immunichain Business Network
 
 Guardian: 
 
-.. image:: Labs/Images/10.20.png
+.. image:: Images/10.20.png
 
 Members:
 
-.. image:: Labs/Images/10.21.png
+.. image:: Images/10.21.png
 
 Child: 
 
-.. image:: Labs/Images/10.22.png
+.. image:: Images/10.22.png
 
 **21.** Click on Submit Transaction. Start with assigning a Member
 
-.. image:: Labs/Images/10.23.png
+.. image:: Images/10.23.png
 
 **22.** Now, create another Child asset. Have the Child’s guardian be the first Guardian. In my business network, this would be Guardian Austin. 
 
-.. image:: Labs/Images/10.24.png
+.. image:: Images/10.24.png
 
-.. image:: Labs/Images/10.25.png
+.. image:: Images/10.25.png
 
 If you noticed, I now have TWINS! My life suddenly got crazy for a 23-year-old. I guess I need to continue work in order to support them. Or just become a crypto-currency millionaire (I don’t know if that’s possible these days). 
 
@@ -946,23 +946,23 @@ On a slightly more serious note, maybe having the Medical Provider create additi
 
 **23.** Great, we just created another Child. Jump back over to the Guardian perspective. Did the new Child show up? 
 
-.. image:: Labs/Images/10.26.png
+.. image:: Images/10.26.png
 
 **24.** Go ahead and only assign a Medical Provider to the new Child by submitting a transaction 
 
 **25.** Should we jump to the Member perspective? Absolutely! 
 
-.. image:: Labs/Images/10.27.png
+.. image:: Images/10.27.png
 
 **26.** Look around at the various participants in the Immunichain business network
 
 Child: 
 
-.. image:: Labs/Images/10.28.png
+.. image:: Images/10.28.png
 
 **27.** If you noticed, all the children showed up. Click on Show All on the Bobbie, you notice that this member isn’t listed as one her authorized Members.
 
-.. image:: Labs/Images/10.29.png
+.. image:: Images/10.29.png
 
 Is this a good thing – that Bobbie appeared to this member? Absolutely not. This would be a non-negotiable in the business network. You wouldn’t want a Member to be able to see a Child, unless it has authorization. Could you imagine a Member being able to read all the Immunization records of every Child? We have to modify the permissions in our Access Control file. 
 
@@ -991,7 +991,7 @@ In this section you are going to open your business network to a REST server. Yo
 
   xxx.xxx.xxx.xxx:3000
 
-.. image:: Labs/Images/11.1.png
+.. image:: Images/11.1.png
 
 **4.** Then click on MedProvider
 
@@ -999,33 +999,33 @@ In this section you are going to open your business network to a REST server. Yo
 
 **5.** Select POST and click on the light brown box in the bottom right. That will place that code in the white box in the bottom left
 
-.. image:: Labs/Images/11.3.png
+.. image:: Images/11.3.png
 
 **6.** Make appropriate changes that you see in the picture below
 
-.. image:: Labs/Images/11.4.png
+.. image:: Images/11.4.png
 
 **7.** Click on Try it out! 
 
 **8.** Scroll down and look at the response code. If you get Response Code: 200 that is very good. That means it was added as a Medical Provider
 
-.. image:: Labs/Images/11.5.png
+.. image:: Images/11.5.png
 
 **9.** Let’s try adding a Member. Click on Member and then POST
 
 **10.** Change the syntax to replicate what is in the picture below and then click on Try it out! Again, response code 200 is what we want
 
-.. image:: Labs/Images/11.6.png
+.. image:: Images/11.6.png
 
 **11.** Scroll up to GET within the Member and click on Try it out!
 
 **12.** Now, you receive all your members that have been created
 
-.. image:: Labs/Images/11.7.png
+.. image:: Images/11.7.png
 
 **13.** Now go back to your Composer Playground and click on All Transactions
 
-.. image:: Labs/Images/11.8.png
+.. image:: Images/11.8.png
 
 **14.** There you will see the addition of participants that you created from the REST Server. Click on View Record to see that transaction that is timestamped. It should be the same transaction that you did from the REST Server
 
@@ -1064,15 +1064,15 @@ In this section you are going to open your business network to a REST server. Yo
 
 **5.** Your screen should look like this
 
-.. image:: Labs/Images/12.1.png
+.. image:: Images/12.1.png
 
 **6.** Run a GET on the Child (Childform). Click on GET, then Try it Out!
 
-.. image:: Labs/Images/12.2.png
+.. image:: Images/12.2.png
 
 **7.** Scroll down to view the two children we have associated with our Guardian - Austin. 
 
-.. image:: Labs/Images/12.3.png
+.. image:: Images/12.3.png
 
 **8.** Run a POST on a Guardian as well. Here is a sample of what I did
 
@@ -1115,23 +1115,23 @@ In this section you are going to open your business network to a REST server. Yo
 
 **4.** Run a GET on the Child. Click on Try it Out
 
-.. image:: Labs/Images/13.1.png
+.. image:: Images/13.1.png
 
 **5.** Below is what should appear in the response
 
-.. image:: Labs/Images/13.2.png
+.. image:: Images/13.2.png
 
 If you notice, the member still receives all the children whether they are authorized or not. That would not work in a production environment. 
 
 **6.** Jump back over to the Composer Playground from the admin perspective. Jump to the Define section and click on the Access Control on the left
 
-.. image:: Labs/Images/13.3.png
+.. image:: Images/13.3.png
 
 **7.** Delete rule memberRead starting on line 159. Here is a before and after picture of what your screen should look like now
 
-.. image:: Labs/Images/13.4.png
+.. image:: Images/13.4.png
 
-.. image:: Labs/Images/13.5.png
+.. image:: Images/13.5.png
 
 **8.** Now add in this rule on line 159. Click Deploy Changes in the bottom left whenever you’ve added this rule::
 
@@ -1150,11 +1150,11 @@ This rule states that the member can only read the child’s immunization record
 
 **9.** Now, submit a transaction to add our member #1 to one of our children
 
-.. image:: Labs/Images/13.6.png
+.. image:: Images/13.6.png
 
 **10.** Now, go back to the REST Server. Run a GET on the Child and click on Try it Out
 
-.. image:: Labs/Images/13.7.png
+.. image:: Images/13.7.png
 
 You now notice that we don’t receive the other child – Bobbie – in our response. That is because our Member #1 – High School – can only see the children’s immunization record in which they have authorization to.
 
@@ -1179,7 +1179,7 @@ In this section you are going to open your business network to a REST server. Yo
 **3.** Now enter composer-rest-server and enter the same information as I have below. Make sure your card name matches what your composer card list output represented. We only want the Medical Provider card::
 
   linux1@blockchain:~> composer-rest-server
-  ? Enter the name of the business network card to use: healthquest@immunichain ## or whatever you called your Medical Provider card
+  ? Enter the name of the business network card to use: healthquest@immunichain ## or whatever you called your Medical 	Provider card
   ? Specify if you want namespaces in the generated REST API: always use namespaces
   ? Specify if you want to enable authentication for the REST API using Passport: No
   ? Specify if you want to enable event publication over WebSockets: Yes
@@ -1187,15 +1187,15 @@ In this section you are going to open your business network to a REST server. Yo
 
 **4.** Run a GET on the Guardian. Click on Try it Out
 
-.. image:: Labs/Images/14.1.png
+.. image:: Images/14.1.png
 
 **5.** Run a GET on the Member. Click on Try it Out
 
-.. image:: Labs/Images/14.2.png
+.. image:: Images/14.2.png
 
 **6.** Run a GET on the Child (Childform). Click on Try it Out
 
-.. image:: Labs/Images/14.3.png
+.. image:: Images/14.3.png
 
 **Bonus:** If you go to xxx.xxx.xxx.xxx:3000/explorer/swagger.json – You will be taken to the Swagger document for the REST Server. Remember, this is from the medical provider’s perspective. With the Swagger document, you are able to incorporate these APIs to a working presentation logic (app or web application)::
 
@@ -1250,17 +1250,17 @@ In order to configure the passport-github strategy, we will need to register an 
 
 **12.** Navigate to your REST server on your browser
 
-.. image:: Labs/Images/15.1.png
+.. image:: Images/15.1.png
 
 It looks exactly like your traditional REST server that we have seen before, but just like book – don’t judge this REST server by its cover
 
 **13.** Run a GET on the Child. Click on Try it Out
 
-.. image:: Labs/Images/15.2.png
+.. image:: Images/15.2.png
 
 **14** What kind of message did you receive? It should be a response code of 401 with the response body saying authorization is required
 
-.. image:: Labs/Images/15.3.png
+.. image:: Images/15.3.png
 
 **15.** End your current REST server by hitting Control and c at the same time. You can also close your current one and open another command line terminal::
 
@@ -1283,7 +1283,7 @@ It looks exactly like your traditional REST server that we have seen before, but
 
 Now, replace clientID with the clientID produced by the Github. Do the same for the clientSecret. Here is what my export command looks like
 
-.. image:: Labs/Images/15.4.png
+.. image:: Images/15.4.png
 
 **17.** Copy that export command and paste it back into your command line. Press enter to execute the command.
 
@@ -1293,41 +1293,41 @@ Now, replace clientID with the clientID produced by the Github. Do the same for 
 
 **19.** Click on Sign In and then Authorize yourself
 
-.. image:: Labs/Images/15.5.png
+.. image:: Images/15.5.png
 
 **20.** You will then be taken back to the REST server
 
 **21.** Scroll down till you get to the Wallet section of the REST server. Do a GET on the /wallet
 
-.. image:: Labs/Images/15.6.png
+.. image:: Images/15.6.png
 
 **22.** Click on Try it Out
 
-.. image:: Labs/Images/15.7.png
+.. image:: Images/15.7.png
 
 That basically means the REST server is looking for a card for the server to act as
 
 **22.** Jump back to Composer Playground and navigate to the home screen where all your ID cards are located. Go ahead and click on the download button on all your ID cards.
 
-.. image:: Labs/Images/15.8.png
+.. image:: Images/15.8.png
 
 **23.** Go back to your REST server and scroll down to POST /wallet/import in the Wallet section
 
-.. image:: Labs/Images/15.9.png
+.. image:: Images/15.9.png
 
 **24.** Click on Choose File and drop in your Admin Card
 
-.. image:: Labs/Images/15.10.png
+.. image:: Images/15.10.png
 
 **25.** Once your Admin Card is in the server, click on Try it Out
 
-.. image:: Labs/Images/15.11.png
+.. image:: Images/15.11.png
 
 Receiving a 200-level response code is totally fine
 
 **26.** Scroll back up and do a GET /wallet within the Wallet section. Click on Try it Out
 
-.. image:: Labs/Images/15.12.png
+.. image:: Images/15.12.png
 
 That means you are acting as the admin of the Immunichain Blockchain network. 
 
