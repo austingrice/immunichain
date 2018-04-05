@@ -1,4 +1,7 @@
-**Immunichain: Comprehensive Overview of Hyperledger Composer with a Taste of Hyperledger Fabric** 
+Immunichain
+===========
+
+**Comprehensive Overview of Hyperledger Composer with a Taste of Hyperledger Fabric** 
 
 **How did Immunichain Come About?**
 
@@ -24,6 +27,14 @@ The first release of this lab will be called the **Big Kahuna.** There will be 5
 
 Once the Big Kahuna is released, the other 5 labs will be released a week apart from each other. In total, 6 labs over the next 6 weeks.
 
+**Special Thanks**
+
+  - Kevin Lee: Thank you for contributing a lot of this code and the framework of Immunichain 
+  - Barry Silliman: Thank you for being a great mentor and steering me in the right direction
+  - Jin VanStee: Thank you for keeping Barry and I in line. Also, you are great at picking restaurants
+  - Garrett Woodworth: Thank you for being the coding wizard you are. You resolved a lot of inhibitors thoughout this lab
+  - Kevin Breitenother: Thank you for being one of the guinea pigs to test out this lab
+
 **Pre-Requisites for Mac**
 
   - Web Browser (Chrome preferably)
@@ -36,4 +47,3 @@ Once the Big Kahuna is released, the other 5 labs will be released a week apart 
   - Command line
   - Internet connectively
   - PuTTY and PuTTYgen
-
