@@ -27,11 +27,12 @@ When releasing this lab, I am using Hyperledger Composer at 0.19.0 and Hyperledg
 
 Hyperledger Fabric and Hyperledger Composer are both open source projects within the Hyperledger Project, which is supported through the Linux Foundation. Since this is an open source project, I would love and appreciate any feedback or errors you receive as you approach them. The open source space is only as good as the community. 
 
-**Special Thanks**
+**Special Thanks**::
 
   - Kevin Lee: Thank you for contributing a lot of this code and the framework of Immunichain 
   - Barry Silliman: Thank you for being a great mentor and steering me in the right direction
   - Jin VanStee: Thank you for keeping Barry and I in line. Also, you are great at picking restaurants
+  - Jennifer Foley: Thank you for your beautiful script to download Hyperledger Composer locally
   - Garrett Woodworth: Thank you for being the coding wizard you are. You resolved a lot of inhibitors thoughout this lab
   - Kevin Breitenother: Thank you for being one of the guinea pigs to test out this lab
 
