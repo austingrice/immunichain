@@ -36,13 +36,13 @@ Hyperledger Fabric and Hyperledger Composer are both open source projects within
   - Garrett Woodworth: Thank you for being the coding wizard you are. You resolved a lot of inhibitors thoughout this lab
   - Kevin Breitenother: Thank you for being one of the guinea pigs to test out this lab
 
-**Pre-Requisites for Mac**
+**Pre-Requisites for Mac**::
 
   - Web Browser (Chrome preferably)
   - Command line
   - Internet connectively
 
-**Pre-Requisites for Microsoft**
+**Pre-Requisites for Microsoft**::
 
   - Web Browser (Chrome preferably)
   - Command line
